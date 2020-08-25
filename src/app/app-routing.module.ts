@@ -1,16 +1,20 @@
-import { NgModule } from '@angular/core';
-import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { NgModule } from "@angular/core";
+import { PreloadAllModules, RouterModule, Routes } from "@angular/router";
+import { CarsComponent } from "./cars/cars.component";
 
 const routes: Routes = [
   {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    path: "",
+    redirectTo: "makers",
+    pathMatch: "full"
   },
+  { path: "cars", redirectTo: "makers", pathMatch: "full" },
+  { path: "cars/:maker", component: CarsComponent },
   {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
-  },
+    path: "makers",
+    loadChildren: () =>
+      import("./makers/makers.module").then(m => m.MakersPageModule)
+  }
 ];
 
 @NgModule({
@@ -19,4 +23,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
