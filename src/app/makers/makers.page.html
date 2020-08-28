@@ -1,53 +1,53 @@
 <ion-header>
-  <ion-toolbar color="light">
-    <ion-title>Manufacturer</ion-title>
-  </ion-toolbar>
+    <ion-toolbar color="light">
+        <ion-title>Manufacturer</ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-alert-controller></ion-alert-controller>
-  <ion-grid>
-    <ion-row>
-      <ion-col size-md="6" offset-md="3">
-        <ion-card>
-          <ion-card-header>
-            <ion-title>
-              Search for a car
-            </ion-title>
-          </ion-card-header>
-          <ion-item>
-            <ion-label position="floating">Manufacturer name</ion-label>
-            <ion-input [(ngModel)]="manufSearch" type="text"></ion-input>
-          </ion-item>
-          <div class="ion-text-end">
-            <ion-button
-              (click)="clearSearch()"
-              color="danger"
-              fill="outline"
-              margin
-            >
-              Clear
-            </ion-button>
-            <ion-button (click)="search()" color="dark" maring>
-              Search
-            </ion-button>
-          </div>
-        </ion-card>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col size-md="6" offset-md="3">
-        <ion-item
-          margin
-          *ngFor="let maker of makers"
-          [routerLink]="['/cars', maker.Make_Name]"
-        >
-          <ion-avatar slot="start">
-            <ion-img [src]="maker.webformatURL"></ion-img>
-          </ion-avatar>
-          {{ maker.Make_Name }}
-        </ion-item>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+    <ion-alert-controller></ion-alert-controller>
+    <ion-grid>
+        <ion-row>
+            <ion-col size-md="6" offset-md="3">
+                <ion-card >
+                    <ion-card-header>
+                        <ion-title>
+                            Search for a car
+                        </ion-title>
+                    </ion-card-header>
+                    <ion-item>
+                        <ion-label position="floating">Manufacturer name</ion-label>
+                        <ion-input [(ngModel)]="manufSearch" type="text"></ion-input>
+                    </ion-item>
+                    <div class="ion-text-end">
+                        <ion-button
+                                (click)="clearSearch()"
+                                color="danger"
+                                fill="outline"
+                                margin
+                        >
+                            Clear
+                        </ion-button>
+                        <ion-button (click)="search()" color="dark" margin>
+                            Search
+                        </ion-button>
+                    </div>
+                </ion-card>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col size-md="6" offset-md="3">
+                <ion-item
+                        margin
+                        *ngFor="let maker of makers"
+                        [routerLink]="['/cars', maker.Make_Name]"
+                >
+                    <ion-avatar slot="start">
+                        <ion-img [src]="maker.webformatURL"></ion-img>
+                    </ion-avatar>
+                    {{ maker.Make_Name }}
+                </ion-item>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
 </ion-content>

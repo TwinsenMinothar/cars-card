@@ -1,5 +1,8 @@
 {
   "name": "CarsCard",
-  "integrations": {},
-  "type": "angular"
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "23f3e5c2"
 }
